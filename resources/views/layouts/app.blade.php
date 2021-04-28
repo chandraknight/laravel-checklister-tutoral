@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body class="c-app">
-    @include('partials.sidenav')
+    @include('partials.sidebar')
 <div class="c-wrapper c-fixed-components">
     <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
         <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">

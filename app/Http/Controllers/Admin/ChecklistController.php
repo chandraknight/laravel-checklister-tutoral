@@ -54,6 +54,7 @@ class ChecklistController extends Controller
      */
     public function edit(ChecklistGroup $checklistGroup, Checklist $checklist)
     {
+        $checklist->load('tasks');
         return view('admin.checklists.edit', compact('checklistGroup', 'checklist'));
     }
 

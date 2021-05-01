@@ -35,3 +35,12 @@
                             </div>
                         </form>
 
+                        @section('scripts')
+                        <script>
+                            ClassicEditor
+                                .create( document.querySelector( '#task-textarea' ) )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                        </script>
+                    @endsection

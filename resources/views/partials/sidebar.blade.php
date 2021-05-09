@@ -43,10 +43,14 @@
 
             <li class="c-sidebar-nav-title">{{ __('Manage Data') }}</li>
 <<<<<<< HEAD
+<<<<<<< HEAD
             {{-- <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
 =======
             <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
 >>>>>>> day7
+=======
+            <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+>>>>>>> day8
                 <a class="c-sidebar-nav-link"
                    href="{{ route('admin.users.index') }}">
                     <svg class="c-sidebar-nav-icon">
@@ -54,10 +58,14 @@
                     </svg> {{ __('Users') }}
                 </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
             </li> --}}
 =======
             </li>
 >>>>>>> day7
+=======
+            </li>
+>>>>>>> day8
         @endif
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>

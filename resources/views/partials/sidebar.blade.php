@@ -42,14 +42,22 @@
             @endforeach
 
             <li class="c-sidebar-nav-title">{{ __('Manage Data') }}</li>
+<<<<<<< HEAD
             {{-- <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+=======
+            <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+>>>>>>> day7
                 <a class="c-sidebar-nav-link"
                    href="{{ route('admin.users.index') }}">
                     <svg class="c-sidebar-nav-icon">
                         <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-puzzle') }}"></use>
                     </svg> {{ __('Users') }}
                 </a>
+<<<<<<< HEAD
             </li> --}}
+=======
+            </li>
+>>>>>>> day7
         @endif
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>

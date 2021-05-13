@@ -20,17 +20,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => ['auth', 'save_last_action_timestamp']], function () {
     Route::get('welcome', [\App\Http\Controllers\PageController::class, 'welcome'])->name('welcome');
     Route::get('consultation', [\App\Http\Controllers\PageController::class, 'consultation'])->name('consultation');
-    // Route::get('checklists/{checklist}', [\App\Http\Controllers\User\ChecklistController::class, 'show'])
-    //     ->name('user.checklists.show');
-    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'IsAdmin'], function() {
+    Route::get('checklists/{checklist}', [\App\Http\Controllers\User\ChecklistController::class, 'show'])
+        ->name('user.checklists.show');
+
+    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'is_admin'], function () {
         Route::resource('pages', \App\Http\Controllers\Admin\PageController::class)
-        ->only(['edit','update']);
+            ->only(['edit', 'update']);
         Route::resource('checklist_groups', \App\Http\Controllers\Admin\ChecklistGroupController::class);
         Route::resource('checklist_groups.checklists', \App\Http\Controllers\Admin\ChecklistController::class);
         Route::resource('checklists.tasks', \App\Http\Controllers\Admin\TaskController::class);
-        Route::get('/users', [\App\Http\Controllers\Admin\UserController::class,'index'])->name('users.index');
+        Route::get('users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+        Route::post('images', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('images.store');
     });
 });
